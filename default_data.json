@@ -1,0 +1,93 @@
+{
+    "service_name": "Process BP Project",
+
+    "configuration": {
+        "authentication": {
+            "enabled": true,
+            "rest": {
+                "enabled": true
+            },
+            "social": {
+                "enabled": false,
+                "google": {
+                    "enabled": false
+                },
+                "github": {
+                    "enabled": false
+                },
+                "devconnect": {
+                    "enabled": false
+                }
+            }
+        },
+        "database": {
+            "enabled": true,
+            "type": "postgresql"
+        },
+        "documentation": {
+            "enabled": true,
+            "swagger": {
+                "enabled": true
+            },
+            "readme": {
+                "enabled": true
+            },
+            "demo_curl_requests": {
+                "enabled": true
+            }
+        },
+        "configuration": {
+            "linter": {
+                "enabled": true
+            },
+            "local_debugger": {
+                "enabled": true
+            },
+            "dockerfile": {
+                "enabled": true
+            }
+        },
+        "observability": {
+            "logger": {
+                "enabled": true
+            },
+            "metrics": {
+                "enabled": true
+            },
+            "tracing": {
+                "enabled": true
+            }
+        },
+        "tests": {
+            "enabled": true,
+            "sample_tests": true
+        },
+        "ci_cd": {
+            "deployment": {
+                "enabled": true
+            },
+            "testing": {
+                "enabled": true
+            },
+            "code_analysis": {
+                "enabled": true
+            },
+            "test_coverage": {
+                "enabled": true
+            },
+            "linting": {
+                "enabled": true
+            }
+        },
+        "deployment": {
+            "enabled": true,
+            "selected": "CDK",
+            "cdk": {
+                "enabled": true
+            },
+            "eyk": {
+                "enabled": false
+            }
+        }
+    }
+}

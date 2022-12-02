@@ -1,0 +1,25 @@
+name: ECS CDK Deployment
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  RSA_PRIVATE_KEY: ${{ '{{' }} secrets.RSA_PRIVATE_KEY }}
+
+jobs:
+  aws_cdk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Load env
+        run: |
+          python setup/load_env.py
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v1.0.2
+        with:
+          path: ./
+      - name: Deploy stack
+        run: |
+          bash scripts/deploy.sh

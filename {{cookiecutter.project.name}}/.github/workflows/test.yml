@@ -1,0 +1,27 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  RSA_PRIVATE_KEY: ${{ '{{' }} secrets.RSA_PRIVATE_KEY }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Load env
+      run: |
+        python setup/load_env.py env/.env.enc
+    - name: Load .env file
+      uses: xom9ikk/dotenv@v1.0.2
+    - name: Setup Project
+      run: |
+        bash scripts/init.sh
+    - name: Run Tests
+      run: |
+        bash scripts/test.sh
