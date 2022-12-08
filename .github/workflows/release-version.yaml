@@ -1,0 +1,17 @@
+name: Save New Version to Process BP Platform
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  post-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send version info to platform
+        uses: fjogeleit/http-request-action@v1.12.0
+        with:
+          url: "https://process-bp-backend.tu2k22.devfactory.com/service-templates"
+          method: "POST"
+          data: { "ref_name": "${{ github.ref_name }}" }
