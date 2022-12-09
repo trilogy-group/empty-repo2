@@ -15,4 +15,5 @@ jobs:
           url: "https://process-bp-backend.tu2k22.devfactory.com/service-templates/add-version"
           # url: "http://localhost:8000/service-templates/1/sync_versions"
           method: "POST"
+          customHeaders: '{"Authorization": "Token ${{ env.USER_TOKEN }}"}'
           data: '{ "ref_name": "${{ github.ref_name }}", "repository": "${{ env.GITHUB_REPOSITORY }}" }'
