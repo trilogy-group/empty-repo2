@@ -15,7 +15,7 @@ except:
 dir_path = os.path.dirname(os.path.realpath(__file__))
 config_path = os.path.join(dir_path, "config.json")
 
-repo_url = "https://github.com/....."
+repo_url = "https://github.com/trilogy-group/empty-repo2"
 try:
     context = json.load(open(config_path))
     logger.info("Loaded config from %s", config_path)
