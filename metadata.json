@@ -1,0 +1,12 @@
+{
+    "version" : 2.0,
+    "description": "Empty Repo Template",
+    "message" : "Added no capability",
+    "capabilities": [
+        {
+            "name": "Nothingkerisation",
+            "decoupled": true,
+            "path": "${projectRoot}/Nokerfile" 
+        }
+    ]
+}
