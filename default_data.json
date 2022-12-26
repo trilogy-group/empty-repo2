@@ -1,5 +1,5 @@
 {
-    "service_name": "Process BP Project",
+    "name": "Process BP Project",
 
     "configuration": {
         "authentication": {
