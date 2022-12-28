@@ -22,7 +22,8 @@ try:
     cookiecutter(
         repo_url, no_input=True,
         overwrite_if_exists=True,
-        extra_context=context
+        extra_context=context,
+        checkout='v4.0'
     )
     logger.info("Project generated successfully using Cookiecutter")
 except Exception as e:
