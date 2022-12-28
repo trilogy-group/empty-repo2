@@ -15,15 +15,17 @@ except:
 dir_path = os.path.dirname(os.path.realpath(__file__))
 config_path = os.path.join(dir_path, "config.json")
 
-repo_url = "https://github.com/trilogy-group/empty-repo2"
+
 try:
     context = json.load(open(config_path))
+    repo_url = context['template']['base_repo']
+    tag_name = context['template']['tag_name']
     logger.info("Loaded config from %s", config_path)
     cookiecutter(
         repo_url, no_input=True,
         overwrite_if_exists=True,
         extra_context=context,
-        checkout='v4.0'
+        checkout=tag_name
     )
     logger.info("Project generated successfully using Cookiecutter")
 except Exception as e:
