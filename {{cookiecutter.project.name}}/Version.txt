@@ -7,3 +7,5 @@ Some more data.
 
 Some cool features added.
 Deployement is also there.
+
+Version 4.8 is here.
