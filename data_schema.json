@@ -3,7 +3,8 @@
   "properties": {
     "name": {
       "title": "Service Name",
-      "type": "string"
+      "type": "string",
+	  "default":"Empty Service"
     },
     "configuration": {
       "type": "object",
@@ -45,7 +46,7 @@
 							"examples": [
 								true
 							],
-							"default": true
+							"default": "true"
 						}
 					}
 				}
