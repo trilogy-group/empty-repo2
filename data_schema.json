@@ -1,5 +1,6 @@
 {
   "type": "object",
+  "default": {},
   "properties": {
     "name": {
       "title": "Service Name",
@@ -8,12 +9,14 @@
     },
     "configuration": {
       "type": "object",
+      "default": {},
       "required": ["name"],
       "properties": {
         "authentication": {
           "$id": "#root/authentication",
           "title": "Authentication",
           "type": "object",
+          "default": {},
           "required": ["enabled", "rest", "social"],
           "properties": {
             "enabled": {
@@ -27,6 +30,7 @@
               "$id": "#root/authentication/rest",
               "title": "Rest",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
@@ -42,6 +46,7 @@
               "$id": "#root/authentication/social",
               "title": "Social",
               "type": "object",
+              "default": {},
               "required": ["enabled", "google", "github", "devconnect"],
               "properties": {
                 "enabled": {
@@ -55,6 +60,7 @@
                   "$id": "#root/authentication/social/google",
                   "title": "Google",
                   "type": "object",
+                  "default": {},
                   "required": ["enabled"],
                   "properties": {
                     "enabled": {
@@ -70,6 +76,7 @@
                   "$id": "#root/authentication/social/github",
                   "title": "Github",
                   "type": "object",
+                  "default": {},
                   "required": ["enabled"],
                   "properties": {
                     "enabled": {
@@ -85,6 +92,7 @@
                   "$id": "#root/authentication/social/devconnect",
                   "title": "Devconnect",
                   "type": "object",
+                  "default": {},
                   "required": ["enabled"],
                   "properties": {
                     "enabled": {
@@ -104,6 +112,7 @@
           "$id": "#root/database",
           "title": "Database",
           "type": "object",
+          "default": {},
           "required": ["enabled", "type"],
           "properties": {
             "enabled": {
@@ -127,6 +136,7 @@
           "$id": "#root/documentation",
           "title": "Documentation",
           "type": "object",
+          "default": {},
           "required": ["enabled", "swagger", "readme", "demo_curl_requests"],
           "properties": {
             "enabled": {
@@ -140,6 +150,7 @@
               "$id": "#root/documentation/swagger",
               "title": "Swagger",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
@@ -155,6 +166,7 @@
               "$id": "#root/documentation/readme",
               "title": "Readme",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
@@ -170,6 +182,7 @@
               "$id": "#root/documentation/demo_curl_requests",
               "title": "Demo_curl_requests",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
@@ -187,12 +200,14 @@
           "$id": "#root/configuration",
           "title": "Configuration",
           "type": "object",
+          "default": {},
           "required": ["linter", "local_debugger"],
           "properties": {
             "linter": {
               "$id": "#root/configuration/linter",
               "title": "Linter",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
@@ -208,6 +223,7 @@
               "$id": "#root/configuration/local_debugger",
               "title": "Local_debugger",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
@@ -225,6 +241,7 @@
           "$id": "#root/observability",
           "title": "Observability",
           "type": "object",
+          "default": {},
           "required": ["logger", "metrics", "xray"],
           "properties": {
             "logger": {
@@ -246,6 +263,7 @@
               "$id": "#root/observability/metrics",
               "title": "Metrics",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
@@ -261,6 +279,7 @@
               "$id": "#root/observability/xray",
               "title": "Xray",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
@@ -278,6 +297,7 @@
           "$id": "#root/tests",
           "title": "Tests",
           "type": "object",
+          "default": {},
           "required": ["enabled", "sample_tests"],
           "properties": {
             "enabled": {
@@ -300,6 +320,7 @@
           "$id": "#root/ci_cd",
           "title": "Ci_cd",
           "type": "object",
+          "default": {},
           "required": [
             "deployment",
             "testing",
@@ -312,6 +333,7 @@
               "$id": "#root/ci_cd/deployment",
               "title": "Deployment",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
@@ -327,6 +349,7 @@
               "$id": "#root/ci_cd/testing",
               "title": "Testing",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
@@ -342,6 +365,7 @@
               "$id": "#root/ci_cd/code_analysis",
               "title": "Code_analysis",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
@@ -357,6 +381,7 @@
               "$id": "#root/ci_cd/test_coverage",
               "title": "Test_coverage",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
@@ -372,6 +397,7 @@
               "$id": "#root/ci_cd/linting",
               "title": "Linting",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
@@ -389,6 +415,7 @@
           "$id": "#root/deployment",
           "title": "Deployment",
           "type": "object",
+          "default": {},
           "required": ["enabled", "selected", "cdk", "eyk"],
           "properties": {
             "enabled": {
@@ -411,6 +438,7 @@
               "$id": "#root/deployment/cdk",
               "title": "Cdk",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
@@ -426,6 +454,7 @@
               "$id": "#root/deployment/eyk",
               "title": "Eyk",
               "type": "object",
+              "default": {},
               "required": ["enabled"],
               "properties": {
                 "enabled": {
