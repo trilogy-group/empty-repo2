@@ -4,601 +4,442 @@
     "name": {
       "title": "Service Name",
       "type": "string",
-	  "default":"Empty Service"
+      "default": "Empty Service"
     },
     "configuration": {
       "type": "object",
-      "required": [
-        "name"
-      ],
+      "required": ["name"],
       "properties": {
-		"authentication": {
-			"$id": "#root/authentication",
-			"title": "Authentication",
-			"type": "object",
-			"required": [
-				"enabled",
-				"rest",
-				"social"
-			],
-			"properties": {
-				"enabled": {
-					"$id": "#root/authentication/enabled",
-					"title": "Enabled",
-					"type": "boolean",
-					"examples": [
-						true
-					],
-					"default": true
-				},
-				"rest": {
-					"$id": "#root/authentication/rest",
-					"title": "Rest",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/authentication/rest/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": "true"
-						}
-					}
-				}
-,
-				"social": {
-					"$id": "#root/authentication/social",
-					"title": "Social",
-					"type": "object",
-					"required": [
-						"enabled",
-						"google",
-						"github",
-						"devconnect"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/authentication/social/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								false
-							],
-							"default": true
-						},
-						"google": {
-							"$id": "#root/authentication/social/google",
-							"title": "Google",
-							"type": "object",
-							"required": [
-								"enabled"
-							],
-							"properties": {
-								"enabled": {
-									"$id": "#root/authentication/social/google/enabled",
-									"title": "Enabled",
-									"type": "boolean",
-									"examples": [
-										false
-									],
-									"default": true
-								}
-							}
-						}
-,
-						"github": {
-							"$id": "#root/authentication/social/github",
-							"title": "Github",
-							"type": "object",
-							"required": [
-								"enabled"
-							],
-							"properties": {
-								"enabled": {
-									"$id": "#root/authentication/social/github/enabled",
-									"title": "Enabled",
-									"type": "boolean",
-									"examples": [
-										false
-									],
-									"default": true
-								}
-							}
-						}
-,
-						"devconnect": {
-							"$id": "#root/authentication/social/devconnect",
-							"title": "Devconnect",
-							"type": "object",
-							"required": [
-								"enabled"
-							],
-							"properties": {
-								"enabled": {
-									"$id": "#root/authentication/social/devconnect/enabled",
-									"title": "Enabled",
-									"type": "boolean",
-									"examples": [
-										false
-									],
-									"default": true
-								}
-							}
-						}
-
-					}
-				}
-
-			}
-		}
-,
-		"database": {
-			"$id": "#root/database",
-			"title": "Database",
-			"type": "object",
-			"required": [
-				"enabled",
-				"type"
-			],
-			"properties": {
-				"enabled": {
-					"$id": "#root/database/enabled",
-					"title": "Enabled",
-					"type": "boolean",
-					"examples": [
-						true
-					],
-					"default": true
-				},
-				"type": {
-					"$id": "#root/database/type",
-					"title": "Type",
-					"type": "string",
-					"default": "",
-					"examples": [
-						"postgresql"
-					],
-					"pattern": "^.*$"
-				}
-			}
-		}
-,
-		"documentation": {
-			"$id": "#root/documentation",
-			"title": "Documentation",
-			"type": "object",
-			"required": [
-				"enabled",
-				"swagger",
-				"readme",
-				"demo_curl_requests"
-			],
-			"properties": {
-				"enabled": {
-					"$id": "#root/documentation/enabled",
-					"title": "Enabled",
-					"type": "boolean",
-					"examples": [
-						true
-					],
-					"default": true
-				},
-				"swagger": {
-					"$id": "#root/documentation/swagger",
-					"title": "Swagger",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/documentation/swagger/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": true
-						}
-					}
-				}
-,
-				"readme": {
-					"$id": "#root/documentation/readme",
-					"title": "Readme",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/documentation/readme/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": true
-						}
-					}
-				}
-,
-				"demo_curl_requests": {
-					"$id": "#root/documentation/demo_curl_requests",
-					"title": "Demo_curl_requests",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/documentation/demo_curl_requests/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": true
-						}
-					}
-				}
-
-			}
-		}
-,
-		"configuration": {
-			"$id": "#root/configuration",
-			"title": "Configuration",
-			"type": "object",
-			"required": [
-				"linter",
-				"local_debugger"
-			],
-			"properties": {
-				"linter": {
-					"$id": "#root/configuration/linter",
-					"title": "Linter",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/configuration/linter/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": true
-						}
-					}
-				}
-,
-				"local_debugger": {
-					"$id": "#root/configuration/local_debugger",
-					"title": "Local_debugger",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/configuration/local_debugger/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": true
-						}
-					}
-				}
-
-			}
-		}
-,
-		"observability": {
-			"$id": "#root/observability",
-			"title": "Observability",
-			"type": "object",
-			"required": [
-				"logger",
-				"metrics",
-				"xray"
-			],
-			"properties": {
-				"logger": {
-					"$id": "#root/observability/logger",
-					"title": "Logger",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/observability/logger/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": true
-						}
-					}
-				}
-,
-				"metrics": {
-					"$id": "#root/observability/metrics",
-					"title": "Metrics",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/observability/metrics/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": true
-						}
-					}
-				}
-,
-				"xray": {
-					"$id": "#root/observability/xray",
-					"title": "Xray",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/observability/xray/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": true
-						}
-					}
-				}
-
-			}
-		}
-,
-		"tests": {
-			"$id": "#root/tests",
-			"title": "Tests",
-			"type": "object",
-			"required": [
-				"enabled",
-				"sample_tests"
-			],
-			"properties": {
-				"enabled": {
-					"$id": "#root/tests/enabled",
-					"title": "Enabled",
-					"type": "boolean",
-					"examples": [
-						true
-					],
-					"default": true
-				},
-				"sample_tests": {
-					"$id": "#root/tests/sample_tests",
-					"title": "Sample_tests",
-					"type": "boolean",
-					"examples": [
-						true
-					],
-					"default": true
-				}
-			}
-		}
-,
-		"ci_cd": {
-			"$id": "#root/ci_cd",
-			"title": "Ci_cd",
-			"type": "object",
-			"required": [
-				"deployment",
-				"testing",
-				"code_analysis",
-				"test_coverage",
-				"linting"
-			],
-			"properties": {
-				"deployment": {
-					"$id": "#root/ci_cd/deployment",
-					"title": "Deployment",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/ci_cd/deployment/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": true
-						}
-					}
-				}
-,
-				"testing": {
-					"$id": "#root/ci_cd/testing",
-					"title": "Testing",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/ci_cd/testing/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": true
-						}
-					}
-				}
-,
-				"code_analysis": {
-					"$id": "#root/ci_cd/code_analysis",
-					"title": "Code_analysis",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/ci_cd/code_analysis/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": true
-						}
-					}
-				}
-,
-				"test_coverage": {
-					"$id": "#root/ci_cd/test_coverage",
-					"title": "Test_coverage",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/ci_cd/test_coverage/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": true
-						}
-					}
-				}
-,
-				"linting": {
-					"$id": "#root/ci_cd/linting",
-					"title": "Linting",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/ci_cd/linting/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": true
-						}
-					}
-				}
-
-			}
-		}
-,
-		"deployment": {
-			"$id": "#root/deployment",
-			"title": "Deployment",
-			"type": "object",
-			"required": [
-				"enabled",
-				"selected",
-				"cdk",
-				"eyk"
-			],
-			"properties": {
-				"enabled": {
-					"$id": "#root/deployment/enabled",
-					"title": "Enabled",
-					"type": "boolean",
-					"examples": [
-						true
-					],
-					"default": true
-				},
-				"selected": {
-					"$id": "#root/deployment/selected",
-					"title": "Selected",
-					"type": "string",
-					"default": "",
-					"examples": [
-						"CDK"
-					],
-					"pattern": "^.*$",
-					"enum": [
-						"ECS (CDK) - Recommended",
-						"EYK"
-				    ]
-				},
-				"cdk": {
-					"$id": "#root/deployment/cdk",
-					"title": "Cdk",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/deployment/cdk/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								true
-							],
-							"default": true
-						}
-					}
-				}
-,
-				"eyk": {
-					"$id": "#root/deployment/eyk",
-					"title": "Eyk",
-					"type": "object",
-					"required": [
-						"enabled"
-					],
-					"properties": {
-						"enabled": {
-							"$id": "#root/deployment/eyk/enabled",
-							"title": "Enabled",
-							"type": "boolean",
-							"examples": [
-								false
-							],
-							"default": true
-						}
-					}
-				}
-
-			}
-		}
-
-	}
+        "authentication": {
+          "$id": "#root/authentication",
+          "title": "Authentication",
+          "type": "object",
+          "required": ["enabled", "rest", "social"],
+          "properties": {
+            "enabled": {
+              "$id": "#root/authentication/enabled",
+              "title": "Enabled",
+              "type": "boolean",
+              "examples": [true],
+              "default": true
+            },
+            "rest": {
+              "$id": "#root/authentication/rest",
+              "title": "Rest",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/authentication/rest/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            },
+            "social": {
+              "$id": "#root/authentication/social",
+              "title": "Social",
+              "type": "object",
+              "required": ["enabled", "google", "github", "devconnect"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/authentication/social/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [false],
+                  "default": true
+                },
+                "google": {
+                  "$id": "#root/authentication/social/google",
+                  "title": "Google",
+                  "type": "object",
+                  "required": ["enabled"],
+                  "properties": {
+                    "enabled": {
+                      "$id": "#root/authentication/social/google/enabled",
+                      "title": "Enabled",
+                      "type": "boolean",
+                      "examples": [false],
+                      "default": true
+                    }
+                  }
+                },
+                "github": {
+                  "$id": "#root/authentication/social/github",
+                  "title": "Github",
+                  "type": "object",
+                  "required": ["enabled"],
+                  "properties": {
+                    "enabled": {
+                      "$id": "#root/authentication/social/github/enabled",
+                      "title": "Enabled",
+                      "type": "boolean",
+                      "examples": [false],
+                      "default": true
+                    }
+                  }
+                },
+                "devconnect": {
+                  "$id": "#root/authentication/social/devconnect",
+                  "title": "Devconnect",
+                  "type": "object",
+                  "required": ["enabled"],
+                  "properties": {
+                    "enabled": {
+                      "$id": "#root/authentication/social/devconnect/enabled",
+                      "title": "Enabled",
+                      "type": "boolean",
+                      "examples": [false],
+                      "default": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "database": {
+          "$id": "#root/database",
+          "title": "Database",
+          "type": "object",
+          "required": ["enabled", "type"],
+          "properties": {
+            "enabled": {
+              "$id": "#root/database/enabled",
+              "title": "Enabled",
+              "type": "boolean",
+              "examples": [true],
+              "default": true
+            },
+            "type": {
+              "$id": "#root/database/type",
+              "title": "Type",
+              "type": "string",
+              "default": "",
+              "examples": ["postgresql"],
+              "pattern": "^.*$"
+            }
+          }
+        },
+        "documentation": {
+          "$id": "#root/documentation",
+          "title": "Documentation",
+          "type": "object",
+          "required": ["enabled", "swagger", "readme", "demo_curl_requests"],
+          "properties": {
+            "enabled": {
+              "$id": "#root/documentation/enabled",
+              "title": "Enabled",
+              "type": "boolean",
+              "examples": [true],
+              "default": true
+            },
+            "swagger": {
+              "$id": "#root/documentation/swagger",
+              "title": "Swagger",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/documentation/swagger/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            },
+            "readme": {
+              "$id": "#root/documentation/readme",
+              "title": "Readme",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/documentation/readme/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            },
+            "demo_curl_requests": {
+              "$id": "#root/documentation/demo_curl_requests",
+              "title": "Demo_curl_requests",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/documentation/demo_curl_requests/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            }
+          }
+        },
+        "configuration": {
+          "$id": "#root/configuration",
+          "title": "Configuration",
+          "type": "object",
+          "required": ["linter", "local_debugger"],
+          "properties": {
+            "linter": {
+              "$id": "#root/configuration/linter",
+              "title": "Linter",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/configuration/linter/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            },
+            "local_debugger": {
+              "$id": "#root/configuration/local_debugger",
+              "title": "Local_debugger",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/configuration/local_debugger/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            }
+          }
+        },
+        "observability": {
+          "$id": "#root/observability",
+          "title": "Observability",
+          "type": "object",
+          "required": ["logger", "metrics", "xray"],
+          "properties": {
+            "logger": {
+              "$id": "#root/observability/logger",
+              "title": "Logger",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/observability/logger/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            },
+            "metrics": {
+              "$id": "#root/observability/metrics",
+              "title": "Metrics",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/observability/metrics/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            },
+            "xray": {
+              "$id": "#root/observability/xray",
+              "title": "Xray",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/observability/xray/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            }
+          }
+        },
+        "tests": {
+          "$id": "#root/tests",
+          "title": "Tests",
+          "type": "object",
+          "required": ["enabled", "sample_tests"],
+          "properties": {
+            "enabled": {
+              "$id": "#root/tests/enabled",
+              "title": "Enabled",
+              "type": "boolean",
+              "examples": [true],
+              "default": true
+            },
+            "sample_tests": {
+              "$id": "#root/tests/sample_tests",
+              "title": "Sample_tests",
+              "type": "boolean",
+              "examples": [true],
+              "default": true
+            }
+          }
+        },
+        "ci_cd": {
+          "$id": "#root/ci_cd",
+          "title": "Ci_cd",
+          "type": "object",
+          "required": [
+            "deployment",
+            "testing",
+            "code_analysis",
+            "test_coverage",
+            "linting"
+          ],
+          "properties": {
+            "deployment": {
+              "$id": "#root/ci_cd/deployment",
+              "title": "Deployment",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/ci_cd/deployment/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            },
+            "testing": {
+              "$id": "#root/ci_cd/testing",
+              "title": "Testing",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/ci_cd/testing/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            },
+            "code_analysis": {
+              "$id": "#root/ci_cd/code_analysis",
+              "title": "Code_analysis",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/ci_cd/code_analysis/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            },
+            "test_coverage": {
+              "$id": "#root/ci_cd/test_coverage",
+              "title": "Test_coverage",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/ci_cd/test_coverage/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            },
+            "linting": {
+              "$id": "#root/ci_cd/linting",
+              "title": "Linting",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/ci_cd/linting/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            }
+          }
+        },
+        "deployment": {
+          "$id": "#root/deployment",
+          "title": "Deployment",
+          "type": "object",
+          "required": ["enabled", "selected", "cdk", "eyk"],
+          "properties": {
+            "enabled": {
+              "$id": "#root/deployment/enabled",
+              "title": "Enabled",
+              "type": "boolean",
+              "examples": [true],
+              "default": true
+            },
+            "selected": {
+              "$id": "#root/deployment/selected",
+              "title": "Selected",
+              "type": "string",
+              "default": "",
+              "examples": ["CDK"],
+              "pattern": "^.*$",
+              "enum": ["ECS (CDK) - Recommended", "EYK"]
+            },
+            "cdk": {
+              "$id": "#root/deployment/cdk",
+              "title": "Cdk",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/deployment/cdk/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [true],
+                  "default": true
+                }
+              }
+            },
+            "eyk": {
+              "$id": "#root/deployment/eyk",
+              "title": "Eyk",
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "$id": "#root/deployment/eyk/enabled",
+                  "title": "Enabled",
+                  "type": "boolean",
+                  "examples": [false],
+                  "default": true
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
